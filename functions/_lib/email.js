@@ -5,7 +5,7 @@
 // disso).
 
 const NOTIFY_TO = "contato@kortexsolucion.com.br";
-const FROM = "KortexSolucion <onboarding@resend.dev>";
+const FROM = "KortexSolucion <contato@kortexsolucion.com.br>";
 
 const AREA_LABELS = {
   atendimento: "Atendimento / WhatsApp",
