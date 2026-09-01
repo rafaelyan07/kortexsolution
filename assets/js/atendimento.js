@@ -1,5 +1,9 @@
 (function () {
   const WHATSAPP_NUMBER = "5511953841945";
+  // API sempre no Cloudflare Pages — funciona tanto quando o site é servido
+  // por lá quanto quando é servido por outro domínio (ex.: KingHost), graças
+  // ao CORS liberado em functions/_lib/cors.js.
+  const API_BASE = "https://kortexsolucion.pages.dev";
 
   const AREA_LABELS = {
     atendimento: "Atendimento / WhatsApp",
@@ -139,7 +143,7 @@
     submitBtn.textContent = "Enviando…";
 
     try {
-      const res = await fetch("/api/leads", {
+      const res = await fetch(API_BASE + "/api/leads", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(payload),
