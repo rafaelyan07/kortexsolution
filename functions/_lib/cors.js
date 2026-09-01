@@ -4,6 +4,10 @@
 const ALLOWED_ORIGINS = [
   "https://kortexsolucion.com.br",
   "https://www.kortexsolucion.com.br",
+  // KingHost ainda não tem SSL ativado nesse domínio — liberar http:// também
+  // até o certificado entrar em vigor. Pode remover depois que o HTTPS estiver ok.
+  "http://kortexsolucion.com.br",
+  "http://www.kortexsolucion.com.br",
   "https://kortexsolucion.pages.dev",
   "http://localhost:8788",
   "http://127.0.0.1:8788",
