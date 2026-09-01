@@ -1,6 +1,7 @@
 import { json } from "../_lib/auth.js";
 import { parseLeadPayload } from "../_lib/validate.js";
 import { corsHeaders, corsPreflight } from "../_lib/cors.js";
+import { notifyNewLead } from "../_lib/email.js";
 
 // OPTIONS /api/leads — preflight CORS (o navegador manda isso antes do POST
 // quando a página vem de um domínio diferente, como o site no KingHost).
@@ -10,7 +11,7 @@ export async function onRequestOptions({ request }) {
 
 // POST /api/leads — endpoint público, chamado pelo questionário guiado
 // (atendimento.html) e por qualquer outro formulário do site.
-export async function onRequestPost({ request, env }) {
+export async function onRequestPost({ request, env, waitUntil }) {
   const cors = corsHeaders(request);
   const db = env.DB;
   if (!db) return json({ ok: false, error: "unavailable" }, { status: 503, headers: cors });
@@ -45,6 +46,8 @@ export async function onRequestPost({ request, env }) {
       data.notes,
     )
     .run();
+
+  waitUntil(notifyNewLead(env, data));
 
   return json({ ok: true, id }, { headers: cors });
 }

@@ -321,13 +321,17 @@
                 <h2>Pronto para <span class="highlight">escalar</span> sua operação?</h2>
                 <p>Preencha os dados abaixo ou <a href="atendimento.html" class="inline-link">faça o diagnóstico guiado em 4 passos</a>.</p>
 
-                <form class="contact-form" action="https://formspree.io/f/mnjrdjql" method="POST">
-                    <input type="text" name="Nome" placeholder="Nome Completo" required>
-                    <input type="text" name="Empresa" placeholder="Nome da Empresa" required>
-                    <input type="tel" name="WhatsApp" placeholder="Seu WhatsApp" required>
-                    <textarea name="Desafio" placeholder="Qual é o maior processo manual na sua empresa hoje?" rows="4" required></textarea>
-                    <button type="submit" class="btn-primary" style="width: 100%;">Solicitar Diagnóstico Gratuito</button>
+                <form class="contact-form" id="simple-contact-form">
+                    <input type="text" name="name" placeholder="Nome Completo" required minlength="2">
+                    <input type="text" name="company" placeholder="Nome da Empresa" required>
+                    <input type="tel" name="phone" placeholder="Seu WhatsApp" required minlength="8">
+                    <textarea name="notes" placeholder="Qual é o maior processo manual na sua empresa hoje?" rows="4" required></textarea>
+                    <p class="form-error" id="simple-contact-error">Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.</p>
+                    <button type="submit" class="btn-primary" id="simple-contact-submit" style="width: 100%;">Solicitar Diagnóstico Gratuito</button>
                 </form>
+                <div class="contact-success" id="simple-contact-success" hidden>
+                    <p>Recebemos seus dados. Nossa equipe entra em contato em breve — se quiser agilizar, chame direto no <a href="https://wa.me/5511953841945" class="inline-link" target="_blank">WhatsApp</a>.</p>
+                </div>
             </div>
         </section>
 
@@ -350,6 +354,7 @@
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/contact.js"></script>
 
     <script>
         const modal = document.getElementById("image-modal");
