@@ -1,0 +1,16 @@
+# Config do Cloudflare Pages para o site da KortexSolucion.
+# Site 100% estático (HTML/CSS/JS puro) + Pages Functions em /functions.
+# Não há build step: o diretório publicado é a raiz do projeto.
+
+name = "kortexsolucion"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "."
+
+# Banco D1 usado pelas Functions (captação de leads + login do painel admin).
+# Crie o banco com `wrangler d1 create kortex-leads-db` e troque o
+# database_id abaixo pelo id retornado. Veja DEPLOY.md para o passo a passo
+# completo (inclui aplicar schema.sql e configurar o binding no dashboard).
+[[d1_databases]]
+binding = "DB"
+database_name = "kortex-leads-db"
+database_id = "7673cb8e-d605-4853-a6b8-3f3137cf5745"

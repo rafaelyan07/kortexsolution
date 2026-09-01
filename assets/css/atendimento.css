@@ -1,0 +1,248 @@
+/* Página de Diagnóstico Guiado (atendimento.html) */
+
+.atendimento {
+    min-height: 90vh;
+    padding: 80px 5% 120px;
+}
+
+.atendimento-container {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.atendimento-container h1 {
+    font-size: 2.8rem;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin: 20px 0 15px;
+}
+
+.atendimento-sub {
+    color: var(--text-tertiary);
+    font-weight: 200;
+    font-size: 1.05rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.progress-track {
+    margin: 35px auto 0;
+    height: 4px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 25%;
+    background: var(--primary-solid);
+    border-radius: 999px;
+    transition: width 0.4s ease;
+}
+
+.step-stage {
+    margin-top: 45px;
+    text-align: left;
+}
+
+.step-card {
+    display: none;
+    animation: fadeStepIn 0.35s ease;
+}
+
+.step-card.active {
+    display: block;
+}
+
+@keyframes fadeStepIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.step-card h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.step-back {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 18px;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.step-back:hover { color: var(--primary-solid); }
+
+/* Opções em grade (Passo 1 - Área) */
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.option-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.25s;
+    color: var(--text-main);
+}
+
+.option-card:hover { border-color: rgba(128, 82, 255, 0.5); transform: translateY(-2px); }
+.option-card.selected { border-color: var(--primary-solid); background: rgba(128, 82, 255, 0.12); }
+
+.option-icon { font-size: 1.6rem; }
+.option-title { font-size: 0.95rem; font-weight: 600; }
+
+/* Opções em lista (Passo 2 e 3) */
+.option-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 100%;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    cursor: pointer;
+    text-align: left;
+    color: var(--text-main);
+    transition: 0.25s;
+}
+
+.option-row:hover { border-color: rgba(128, 82, 255, 0.5); }
+.option-row.selected { border-color: var(--primary-solid); background: rgba(128, 82, 255, 0.12); }
+.option-row-dashed { border-style: dashed; }
+
+.option-row-title { font-size: 0.95rem; font-weight: 600; }
+.option-row-desc { font-size: 0.82rem; color: var(--text-muted); }
+
+/* Passo 4 - Formulário de contato */
+.lead-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-muted);
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 13px 15px;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 8px;
+    outline: none;
+    font-size: 0.95rem;
+    font-family: inherit;
+}
+
+.field input:focus,
+.field textarea:focus { border-color: var(--primary-solid); }
+
+.consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.consent-row input { margin-top: 3px; }
+
+.form-error {
+    display: none;
+    color: #f87171;
+    font-size: 0.85rem;
+}
+
+.form-error.visible { display: block; }
+
+/* Passo 5 - Confirmação */
+.step-confirm {
+    text-align: center;
+}
+
+.confirm-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 18px;
+    border-radius: 50%;
+    background: rgba(128, 82, 255, 0.2);
+    color: var(--primary-solid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+}
+
+.confirm-text {
+    color: var(--text-tertiary);
+    font-weight: 200;
+    max-width: 420px;
+    margin: 0 auto;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.btn-whatsapp-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 24px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 14px 28px;
+    border-radius: 999px;
+    transition: 0.3s;
+}
+
+.btn-whatsapp-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3); }
+
+.confirm-footnote {
+    margin-top: 18px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+@media (max-width: 600px) {
+    .atendimento-container h1 { font-size: 2rem; }
+    .option-grid { grid-template-columns: 1fr; }
+}

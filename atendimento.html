@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Guiado | KortexSolucion</title>
+    <meta name="description" content="Responda 4 perguntas rápidas sobre o seu negócio e receba o retorno de um especialista da KortexSolucion.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/atendimento.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+    <div id="particles-js"></div>
+
+    <div class="content-wrapper">
+
+        <header class="navbar">
+            <a href="index.html" class="logo">Kortex<span>Solucion</span></a>
+            <nav class="nav-links">
+                <a href="index.html#servicos">Serviços</a>
+                <a href="index.html#cases">Cases</a>
+                <a href="index.html#sobre">Fundadores</a>
+                <a href="index.html#contato">Contato</a>
+            </nav>
+            <a href="https://wa.me/5511953841945" class="btn-outline" target="_blank">Falar no WhatsApp</a>
+        </header>
+
+        <section class="atendimento">
+            <div class="atendimento-container">
+                <span class="tag-glow">Diagnóstico guiado</span>
+                <h1>Vamos entender <span class="highlight">seu desafio</span>.</h1>
+                <p class="atendimento-sub">Leva menos de um minuto. Suas respostas vão direto para um especialista da Kortex analisar e retornar com uma proposta de solução.</p>
+
+                <div class="progress-track" id="progress-track">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+
+                <div class="step-stage" id="step-stage">
+
+                    <!-- Passo 1: Área -->
+                    <div class="step-card" data-step="1">
+                        <h2>Qual é o seu maior desafio hoje?</h2>
+                        <div class="option-grid" id="area-options">
+                            <button type="button" class="option-card" data-area="atendimento">
+                                <span class="option-icon">💬</span>
+                                <span class="option-title">Atendimento / WhatsApp</span>
+                            </button>
+                            <button type="button" class="option-card" data-area="integracao">
+                                <span class="option-icon">🔄</span>
+                                <span class="option-title">Integração de Sistemas</span>
+                            </button>
+                            <button type="button" class="option-card" data-area="paineis">
+                                <span class="option-icon">📊</span>
+                                <span class="option-title">Painéis & Dashboards</span>
+                            </button>
+                            <button type="button" class="option-card" data-area="outro">
+                                <span class="option-icon">✨</span>
+                                <span class="option-title">Outro / ainda não sei</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Passo 2: Situação -->
+                    <div class="step-card" data-step="2">
+                        <button type="button" class="step-back" data-back="1">← Voltar</button>
+                        <h2>Qual situação mais parece com a sua?</h2>
+                        <div class="option-list" id="situation-options"></div>
+                    </div>
+
+                    <!-- Passo 3: Urgência -->
+                    <div class="step-card" data-step="3">
+                        <button type="button" class="step-back" data-back="2">← Voltar</button>
+                        <h2>Qual a urgência do seu caso?</h2>
+                        <div class="option-list" id="urgency-options">
+                            <button type="button" class="option-row" data-urgency="urgente">
+                                <span class="option-row-title">É urgente</span>
+                                <span class="option-row-desc">Preciso resolver essa semana</span>
+                            </button>
+                            <button type="button" class="option-row" data-urgency="breve">
+                                <span class="option-row-title">Preciso resolver em breve</span>
+                                <span class="option-row-desc">Nos próximos 30 dias</span>
+                            </button>
+                            <button type="button" class="option-row" data-urgency="sem_pressa">
+                                <span class="option-row-title">Ainda estou avaliando</span>
+                                <span class="option-row-desc">Sem prazo definido</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Passo 4: Contato -->
+                    <div class="step-card" data-step="4">
+                        <button type="button" class="step-back" data-back="3">← Voltar</button>
+                        <h2>Para quem enviamos o retorno?</h2>
+                        <form id="lead-form" class="lead-form" novalidate>
+                            <div class="field">
+                                <label for="f-name">Nome</label>
+                                <input id="f-name" name="name" type="text" required minlength="2" maxlength="150">
+                            </div>
+                            <div class="field">
+                                <label for="f-company">Empresa</label>
+                                <input id="f-company" name="company" type="text" required minlength="1" maxlength="150">
+                            </div>
+                            <div class="field">
+                                <label for="f-phone">WhatsApp</label>
+                                <input id="f-phone" name="phone" type="tel" required minlength="8" maxlength="30" placeholder="(11) 90000-0000">
+                            </div>
+                            <div class="field">
+                                <label for="f-email">E-mail (opcional)</label>
+                                <input id="f-email" name="email" type="email" maxlength="150">
+                            </div>
+                            <div class="field">
+                                <label for="f-notes">Conte rapidamente o desafio (opcional)</label>
+                                <textarea id="f-notes" name="notes" rows="3" maxlength="2000"></textarea>
+                            </div>
+                            <label class="consent-row">
+                                <input type="checkbox" id="f-consent" required>
+                                Autorizo o contato da Kortex com base nos dados enviados, conforme a LGPD.
+                            </label>
+
+                            <p class="form-error" id="form-error">Não foi possível enviar agora. Tente novamente ou fale pelo WhatsApp.</p>
+
+                            <button type="submit" class="btn-primary" id="submit-btn" style="width: 100%;">Ver próximo passo</button>
+                        </form>
+                    </div>
+
+                    <!-- Passo 5: Confirmação -->
+                    <div class="step-card step-confirm" data-step="5">
+                        <div class="confirm-icon"><i class="fa-solid fa-check"></i></div>
+                        <h2 id="confirm-title">Recebemos suas informações</h2>
+                        <p class="confirm-text">Nossa equipe vai analisar seu desafio e retornar com um diagnóstico. Para agilizar, você também pode chamar agora no WhatsApp — já levamos o resumo do que você respondeu.</p>
+                        <a href="#" id="confirm-whatsapp" class="btn-whatsapp-cta" target="_blank">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path fill="#FFF" d="M16.05 2.53C8.6 2.53 2.53 8.6 2.53 16.05c0 2.37.62 4.68 1.8 6.7L2.5 29.5l6.9-1.8c2 .1.06 1.7 4.54 1.7 7.45 0 13.52-6.07 13.52-13.52S23.5 2.53 16.05 2.53zM16.05 27c-2 0-3.95-.54-5.67-1.55l-.4-.24-4.2 1.1 1.12-4.1-.26-.43C5.64 20.08 5.1 18.1 5.1 16.05c0-6.04 4.9-10.95 10.95-10.95s10.95 4.9 10.95 10.95-4.9 10.95-10.95 10.95zm6.02-8.2c-.33-.16-1.95-.96-2.25-1.07-.3-.1-.52-.16-.74.16-.22.33-.86 1.07-1.05 1.28-.2.22-.4.25-.73.08-1.5-.75-2.6-1.5-3.6-3.1-.12-.17-.02-.27.06-.35.12-.1.25-.3.37-.45.13-.15.17-.25.25-.43.08-.17.04-.33-.04-.42-.08-.08-.74-1.78-1-2.44-.26-.64-.53-.55-.74-.55h-.63c-.22 0-.58.08-.88.42-.3.33-1.15 1.12-1.15 2.74s1.18 3.18 1.34 3.4c.16.22 2.32 3.54 5.62 4.97 1.88.8 2.54.85 3.44.7.67-.1 1.95-.8 2.23-1.57.28-.78.28-1.44.2-1.58-.08-.14-.3-.22-.63-.4z"/></svg>
+                            Continuar no WhatsApp
+                        </a>
+                        <p class="confirm-footnote">Prefere esperar? Sem problema — um especialista da Kortex recebe seus dados e retorna o contato.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 KortexSolucion. Fundadores: Júlio César & Rafael Campos. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/atendimento.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Administrativo | KortexSolucion</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <div class="admin-shell">
+            <div class="admin-card">
+                <h1>Painel administrativo</h1>
+                <p class="sub">Acesso restrito à equipe da Kortex.</p>
+
+                <p class="admin-error" id="login-error"></p>
+
+                <form id="login-form">
+                    <div class="admin-field">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="password">Senha</label>
+                        <input id="password" name="password" type="password" required>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Entrar</button>
+                </form>
+
+                <p class="admin-link">Primeiro acesso? <a href="setup.html">Criar conta de admin</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>

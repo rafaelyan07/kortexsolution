@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurar Admin | KortexSolucion</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="content-wrapper">
+        <div class="admin-shell">
+            <div class="admin-card">
+                <h1>Criar conta de admin</h1>
+                <p class="sub">Funciona só uma vez, enquanto não existir nenhum admin. Precisa do ADMIN_SETUP_SECRET configurado nas variáveis de ambiente do Cloudflare Pages.</p>
+
+                <p class="admin-error" id="setup-error"></p>
+                <p class="admin-success" id="setup-success" style="display:none;">Admin criado com sucesso. <a href="login.html">Ir para o login →</a></p>
+
+                <form id="setup-form">
+                    <div class="admin-field">
+                        <label for="setupSecret">Setup Secret</label>
+                        <input id="setupSecret" name="setupSecret" type="password" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="name">Nome</label>
+                        <input id="name" name="name" type="text" required minlength="2">
+                    </div>
+                    <div class="admin-field">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" required>
+                    </div>
+                    <div class="admin-field">
+                        <label for="password">Senha (mín. 8 caracteres)</label>
+                        <input id="password" name="password" type="password" required minlength="8">
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%;">Criar admin</button>
+                </form>
+
+                <p class="admin-link"><a href="login.html">← Voltar para o login</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/admin.js"></script>
+</body>
+</html>
