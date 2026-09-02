@@ -1,5 +1,5 @@
 (function () {
-  const WHATSAPP_NUMBER = "5511953841945";
+  const WHATSAPP_NUMBER = "5511973001003";
   // API sempre no Cloudflare Pages — funciona tanto quando o site é servido
   // por lá quanto quando é servido por outro domínio (ex.: KingHost), graças
   // ao CORS liberado em functions/_lib/cors.js.
